@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using final1.Data;
+using final1.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace final1
 {
@@ -29,6 +31,19 @@ namespace final1
 
             services.AddDbContext<final1Context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("final1Context")));
+
+            services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+
+            services.AddScoped<Cart>(sp => Cart.GetCart(sp)); 
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+                //options.IdleTimeout = TimeSpan.FromSeconds(10);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +65,8 @@ namespace final1
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
