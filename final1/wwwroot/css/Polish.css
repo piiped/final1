@@ -1,0 +1,256 @@
+﻿
+* {
+    font-family: 'Mitr', sans-serif;
+}
+.container {
+    max-width: 1000px;
+}
+
+.filter {
+    /*justify-content: center;*/
+    padding: 0 3px;
+}
+.colors {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.box {
+    padding: 0 7px;
+}
+.row{
+   
+}
+.allbtn {
+    width: 30px;
+    height: 30px;
+    outline-style: initial;
+    border-radius: 100px !important;
+    cursor: pointer;
+    margin: 0 1.5px;
+    text-align: center;
+    font-size: 8px;
+    color: #A95759;
+    border: 1px solid #A95759;
+    background-color: white;
+    transition-duration: 100ms;
+}
+
+    .allbtn:hover {
+        color: white;
+        background-color: #A95759;
+        transition-duration: 100ms;
+    }
+
+.circle {
+    width: 30px;
+    height: 30px;
+    outline-style: initial;
+    border-radius: 100px !important;
+    cursor: pointer;
+    margin: 0 1.5px;
+    transition-duration: 100ms;
+    border: rgb(0,0,0,0) 1px solid;
+}
+    .circle:hover {
+        border: rgb(0,0,0,0.3) 1px solid !important;
+        transition-duration: 100ms;
+    }
+
+.ncolor {
+    font-size: 10px;
+    font-weight: 300;
+    margin-bottom:10px;
+}
+
+.container {
+    position: relative;
+}
+
+.cc {
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+}
+
+.heading {
+    text-align: center;
+    font-weight: 700;
+    font-size: 80px;
+    color: #8A736C;
+    margin-top: 70px;
+    margin-bottom: 24px;
+}
+
+input[type=text] {
+    width: 372px;
+    height: 40px;
+    background: #D2C0AC;
+    border: 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 10px;
+    font-size: 15px;
+    line-height: 1px;
+    color: #A95759;
+    border-width: 0px;
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    outline: none;
+    -webkit-text-fill-color: #8A736C;
+    -webkit-box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+button {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 40px;
+    color: #A95759;
+    border-width: 0px;
+    width: 40px;
+    padding: 5px;
+    background: #D2C0AC;
+    outline: none;
+}
+
+    button:focus {
+        outline: none;
+    }
+
+.table {
+    margin-top: 80px;
+}
+
+.card {
+    background: #ffffff;
+    /*width: 250px;
+    height: 300px;*/
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    text-align: center;
+    border: none;
+}
+
+
+.card-image {
+    align-items: center;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image {
+    margin-top: 20px;
+    align-items: center;
+    align-content: center;
+    border-radius: 10px;
+}
+
+.sec {
+    margin: 0 17px;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+.describe {
+    flex-basis: 50%;
+}
+
+    .describe p {
+        margin: 0;
+    }
+
+    .describe .active {
+        color: #000000;
+        font-weight: 700;
+    }
+
+    .describe .name {
+        color: #666666;
+        font-weight: 400;
+    }
+
+    .describe .detail {
+        color: #888888;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 100%;
+    height: 95%;
+    opacity: 0;
+    transition: background 0.5s ease;
+    box-shadow: 10px 10px 20px #67666629;
+    transition-delay: 100ms;
+    transition-duration: 200ms;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    /*padding: 50px 0;*/
+    border: none;
+}
+
+.cc:hover .overlay {
+    opacity: 1;
+}
+
+.button {
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+    .button a {
+        width: 200px;
+        padding: 10px 30px;
+        text-align: center;
+        color: white;
+        background: #A95759;
+    }
+
+        .button a:hover {
+            background: #F7F2E9;
+            color: #A95759;
+            transition-delay: 100ms;
+            transition-duration: 200ms;
+        }
+
+.cc:hover .button {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+    .row {
+        margin: 0px !important;
+        justify-content: center !important;
+    }
+    .colors {
+        text-align: center !important;
+    }
+    .filter {
+        margin: 12px;
+    }
+}
+@media only screen and (max-width:1080px) and (min-width:768px)
+ {
+    .container {
+        width: 755px !important;
+    }
+}

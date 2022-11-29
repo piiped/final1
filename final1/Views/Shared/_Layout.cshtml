@@ -3,47 +3,97 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - final1</title>
+    <title>@ViewData["Title"] - La'nails</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow ">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">final1</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/logo_white.png" class="logo" />
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Shop <i class="drop bi bi-chevron-down"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="" asp-controller="Shop" asp-action="Index">SHOP</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-area="" asp-controller="Shop" asp-action="Polish">GEL NAIL POLISH</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-area="" asp-controller="Shop" asp-action="Fakenail">FAKE NAILS</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-area="" asp-controller="Shop" asp-action="Tools">NAIL TOOLS</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Shop</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-heart"></i> Wishlist</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index"><i class="bi bi-cart3"></i> Cart</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+
+    <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+
+    <footer class=" footer ">
+        <div class="btt">
+            <a class="btt-text" href="#top">
+                BACK TO TOP<span></span>
+                <i class="btt-icon bi bi-chevron-up"></i>
+            </a>
+        </div>
+        <div class="footer-divider"></div>
         <div class="container">
-            &copy; 2022 - final1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="footer-contact">
+                CONTACT US
+                <a href="mailto:papitchaya.aom@mail.kmutt.ac.th"><img class="footer-icon" src="~/right-arrow.png" /></a>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <div class="footer-address">
+                <div class="footer-detail">
+                    126 Pracha Uthit Rd., Bang Mod,<br />
+                    Thung Khru, Bangkok 10140, Thailand<br />
+                    Phone : +66 2470 8000
+                </div>
+                <div class="footer-logo">
+                    <p>FOLLOW US</p>
+                    <div class="footer-flex">
+                        <a href="https://www.facebook.com/"><img class="footer-fa" src="~/facebook.png" /></a>
+                        <a href="https://www.instagram.com/"><img class="footer-fa" src="~/instagram.png" /></a>
+                        <a href="https://twitter.com/home"><img class="footer-fa" src="~/twitter.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <p class="footer-copy">COPYRIGHT © 2022 LA’NAILS</p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

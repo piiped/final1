@@ -1,0 +1,72 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400&display=swap');
+
+* {
+    font-family: 'Mitr', sans-serif;
+}
+.heading {
+    text-align: center;
+    font-weight: 700;
+    font-size: 80px;
+    margin: 70px 0;
+    color: #8A736C;
+}
+.sub-head {
+    font-weight: 700;
+    font-size: 32px;
+    color: #8A736C;
+    text-align: left;
+}
+.paragraph {
+    font-size:24px;
+    font-weight: 500;
+    text-indent: 50px;
+    text-align: justify;
+    color: #8A736C;
+    margin-top: 24px;
+    margin-bottom:48px;
+}
+.list {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: justify;
+    color: #8A736C;
+    margin-top: 24px;
+    margin-bottom: 60px;
+    list-style-position: outside;
+}
+ .sec{
+    margin-top: 86px;
+    font-size: 20px;
+    color: #8A736C;
+}
+.image{
+    width:674px;
+    align-content:center;
+    margin-top:30px;
+}
+.grid {
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+    align-content: center;
+    justify-content: center;
+    border:none;
+}
+.card {
+    width: 280px;
+    border: none;
+}
+.sub {
+    text-align: center;
+    font-size: 20px;
+    color: #8A736C;
+    font-weight: 700;
+    margin:18px 0;
+}
+.subsub {
+    text-align: center;
+    font-size: 20px;
+    color: #8A736C;
+    font-weight: 500;
+    text-align: justify;
+    font-family: 'Mitr', sans-serif;
+}
