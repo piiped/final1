@@ -1,0 +1,40 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0px;
+}
+.heading {
+    text-align: center;
+    font-weight: 700;
+    font-size: 80px;
+    margin: 70px 0;
+    color: #8A736C;
+}
+p {
+    text-align: center;
+    color: #8A736C;
+}
+.section{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-content:center;
+    align-items:center;
+    margin-top:100px;
+    margin-bottom:100px;
+}
+.sec-1{
+    width:570px;
+    text-align:left;
+}
+    .sec-1 p {
+        text-align: justify;
+        text-indent:20px;
+        
+    }

@@ -3,15 +3,21 @@
 @{
     ViewData["Title"] = "Index";
 }
+<head>
+    <title>@ViewData["Title"] - La'nails</title>
+    <link rel="stylesheet" href="~/css/ProcuctsIndex.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
+<div class="container">
+    <h1 class="heading">Products List</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <div class="panel-head">
+            <table class="table">
+                <thead>
+                    <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -33,10 +39,10 @@
            
             <th></th>
         </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                    <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -57,11 +63,13 @@
             </td>
             
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a> |
+                            <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-card-list"></i></a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash3"></i></a>
             </td>
         </tr>
 }
-    </tbody>
-</table>
+                </tbody>
+            </table>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+body {
+    font-family: Arial;
+    font-size: 17px;
+}
+.logo-payment{
+    margin-top:40px;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+}
+
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+}
+
+.col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 16px;
+}
+
+
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+.btn {
+    background-color: #A95759;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 140px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+    .btn:hover {
+        background-color: #F6F2E9;
+        color: #A95759;
+    }
+
+a {
+    color: #2196F3;
+}
+
+hr {
+    border: 1px solid lightgrey;
+}
+
+span.price {
+    float: right;
+    color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+
+    .col-25 {
+        margin-bottom: 20px;
+    }
+}
+
+.section{
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    align-items:center;
+}
+.section img{
+    margin-top:40px;
+}
+.sec {
+    color: #A83A3A;
+    text-align: center;
+    font-size: 15px;
+}
+.sec-1{
+    
+    font-size:17px;
+    margin-bottom:10px;
+    font-weight:800;
+}
+.sec-2 {
+    font-size: 17px;
+    margin:0;
+}
+#amount, #date, #time{
+    width:200px;
+    margin-bottom:20px;
+    font-size:17px;
+}
