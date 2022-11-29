@@ -34,11 +34,11 @@ namespace final1.Controllers
 
             if (_cart.CartItems.Count == 0) 
             {
-                ModelState.AddModelError(key:"",errorMessage:"Cart is empty, please add a product first.");
+                ModelState.AddModelError("","Cart is empty, please add a product first.");
             }
             if (ModelState.IsValid)
             {
-                CreatOrder(order);
+                CreateOrder(order);
                 _cart.ClearCart();
                 return View("CheckoutComplete", order);
 
@@ -51,7 +51,7 @@ namespace final1.Controllers
             return View(order);
         }
 
-        public void CreatOrder(Order order)
+        public void CreateOrder(Order order)
         {
             var cartItems = _cart.CartItems;
 
