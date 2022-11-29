@@ -1,0 +1,111 @@
+﻿@model IEnumerable<final1.Models.Products>
+
+@{
+    ViewData["Title"] = "Fakenail";
+}
+
+<head>
+    <title>@ViewData["Title"] - La'nails</title>
+    <link rel="stylesheet" href="~/css/Polish.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
+
+<div class="container text-center">
+    
+    <h1 class="heading">FAKE NAILS</h1>
+    <div class=" text-center">​
+        <form asp-controller="Shop" asp-action= "Fakenail">​
+        <input class="search" type="text" name="querry" placeholder="Search..." />​
+        <button type="submit" ><i class=" bi-search"></i></button>​
+        </form>​
+    </div>
+    
+
+
+    <div class="row table">
+        <div class="col-sm-12 col-md-2 filter">
+            <form method="get" asp-controller="Shop" asp-action="Fakenail_">
+            <p class="colors">Colors</p>
+                <div class="row filter">     
+                        <div class="box">
+                            <button class="allbtn" asp-area="" asp-controller="Shop" asp-action="Fakenail">ALL</button>
+                            <p class="ncolor">All</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:#40A4D8" value="blue"></button>
+                            <p class="ncolor">Blue</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle"  style="background-color:saddlebrown" value="brown"></button>
+                            <p class="ncolor">Brown</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:#B2C225;" value="green"></button>
+                            <p class="ncolor">Green</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:#B2C225;" value="neon"></button>
+                            <p class="ncolor">Neon</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:#B2C225;" value="nude"></button>
+                            <p class="ncolor">Nude</p>
+                        </div>                                                                       
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:#B2C225;" value="pastel"></button>
+                            <p class="ncolor">Pastel</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:#EE657A" value="pink"></button>
+                            <p class="ncolor">Pink</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:silver" value="rainbow"></button>
+                            <p class="ncolor">Rainbow</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:#DB3838" value="red"></button>
+                            <p class="ncolor">Red</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:#A363D9" value="violet"></button>
+                            <p class="ncolor">Violet</p>
+                        </div>
+                        <div class="box">
+                            <button type="submit" name="n" class="circle" style="background-color:white;border:1px solid rgba(0,0,0,0.2) " value="white"></button>
+                            <p class="ncolor">White</p>
+                        </div>
+               
+                </div>
+        </form>
+        </div>
+
+        <div class="col-sm-12 col-md-10">
+        <div class="row g-4"> 
+        @foreach (var products in Model)
+        {
+ <div class="cc col-6 col-sm-6 col-md-3 pb-4">
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img class="image" src="~/fake_nails/@products.ImageUrl1" style="width:auto; max-height:200px" />
+                    </div>
+                    <div class="sec">
+                        <div class="describe">
+                            <p class="name">@products.Name</p>
+                            <p class="active">฿ @products.Price.ToString("c")</p>
+                        </div>
+                    </div>   
+                </div>
+                <div class="overlay">
+                    <div class="button"> <a class="a-cleanup" asp-controller="Shop" asp-action="Details" asp-route-id="@products.Id"> Detail </a></div>
+                    <div class="button"><a asp-controller="Cart" asp-action="AddToCartf" asp-route-id="@products.Id" >Add to cart</a></div>
+                </div>
+            </div>
+        }
+        </div>
+        </div>
+    </div>
+</div>
+
+

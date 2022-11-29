@@ -142,6 +142,25 @@ button {
     border: none;
 }
 
+.wish-icon {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    z-index: 99;
+    cursor: pointer;
+    font-size: 20px;
+    color: black;
+    border-width: 1px;
+    border-color: #A95759;
+}
+
+    .wish-icon .bi-heart-fill:hover {
+        color: #A95759;
+    }
+
+    .wish-icon .bi-heart-fill:focus {
+        color: #A95759;
+    }
 
 .card-image {
     align-items: center;
