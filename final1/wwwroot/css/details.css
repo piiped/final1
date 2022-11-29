@@ -1,0 +1,147 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+.container {
+    position: relative;
+    max-width: 1080px;
+}
+img {
+    vertical-align: middle;
+}
+
+
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    text-align: center;
+    width:500px;
+    height:auto;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+.section{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+.sec-2{
+    
+}
+.secc {
+    display:flex;
+    flex-direction:column;
+}
+.secc h3{
+    font-size:36px;
+    margin-top:20px;
+}
+p .prc {
+   font-size: 24px;
+}
+p .det {
+   color: #666666;
+   font-size:14px;
+    }
+p .qtt{
+    margin-right:30px;
+}
+#minus, #plus {
+    width: 30px;
+    background: #D2C0AC;
+    border: none;
+    color: #8A736C;
+}
+
+.qty{
+    width:30px;
+    text-align:center;
+    border:none;
+}
+.btn {
+   background: #A95759;
+   border:none;
+   color:white;
+   margin-top:40px;
+   width:325px;
+   border-radius:0px;
+}
+    .btn:hover {
+        background: #F7F2E9;
+        color: #A95759;
+
+    }
+
+heart-btn {
+    transform: translate(-50%,-50%);
+    position:relative;
+}
+
+.heart-active {
+    border-color: #A95759;
+    background: #A95759;
+}
+.heart {
+    position: absolute;
+    background: url("../heart.png") no-repeat;
+    background-position: left;
+    top:0;
+    left:25px;
+    background-size: 2900%;
+    height: 90px;
+    width: 90px;
+    transform: translate(-50%,-50%);
+}
+
+.heart.heart-active {
+    animation: animate .8s steps(28) 1;
+    background-position: right;
+}
+
+@keyframes animate {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}

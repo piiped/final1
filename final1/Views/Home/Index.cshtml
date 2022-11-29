@@ -2,7 +2,86 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<head>
+    <title>@ViewData["Title"] - La'nails</title>
+    <link rel="stylesheet" href="~/css/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
+
+<div class="container text-center">
+    <div>
+        <img src="~/index/cover.jpg" width="100%" />
+    </div>
+    <div class="block row g-3">
+        <div class="block-card col-sm">
+            <a asp-area="" asp-controller="Home" asp-action="MeasureNails"><img src="~/index/measure.jpg" width="294px" height="294px" /></a>
+            <p>HOW TO MEASURE NAILS</p>
+        </div>
+        <div class="block-card col-sm">
+            <a asp-area="" asp-controller="Home" asp-action="GelNailCare"><img src="~/index/nail_care.png" width="294px" height="294px" /></a>
+            <p>GEL NAIL CARE</p>
+
+        </div>
+        <div class="block-card col-sm">
+            <a asp-area="" asp-controller="Home" asp-action="NailShape"><img src="~/index/nail_shape.png" width="294px" height="294px" /></a>
+            <p>NAIL SHAPE</p>
+        </div>
+    </div>
 </div>
+
+<div class="home-divider"></div>
+
+
+<div class="container">
+    <div class="section">
+        <div class="sec-1">
+            <p>(01)</p>
+            <h1>
+                GEL<br />
+                NAIL POLISH
+            </h1>
+        </div>
+        <div class="sec-2">
+            <div class="frame">
+                <a asp-area="" asp-controller="Shop" asp-action="Polish"><img src="~/index/polish2.jpg" width="400px" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="home-divider"></div>
+
+<div class="container">
+    <div class="section">
+        <div class="sec-1">
+            <p>(02)</p>
+            <h1>
+                FAKE NAILS
+            </h1>
+        </div>
+        <div class="sec-2">
+            <div class="frame">
+                <a asp-area="" asp-controller="Shop" asp-action="FakeNail"><img src="~/index/fakenail.png" width="400px" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="home-divider"></div>
+
+<div class="container">
+    <div class="section">
+        <div class="sec-1">
+            <p>(03)</p>
+            <h1>
+                NAIL TOOLS
+            </h1>
+        </div>
+        <div class="sec-2">
+            <div class="frame">
+                <a asp-area="" asp-controller="Shop" asp-action="Tools"><img src="~/index/tools.jpg" width="400px" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+
