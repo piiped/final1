@@ -38,7 +38,7 @@ namespace final1.Controllers
             }
             if (ModelState.IsValid)
             {
-                CreatOrder(order);
+                CreateOrder(order);
                 _cart.ClearCart();
                 return View("CheckoutComplete", order);
 
@@ -51,7 +51,7 @@ namespace final1.Controllers
             return View(order);
         }
 
-        public void CreatOrder(Order order)
+        public void CreateOrder(Order order)
         {
             var cartItems = _cart.CartItems;
 
@@ -60,7 +60,7 @@ namespace final1.Controllers
                 var orderItem = new OrderItem()
                 {
                     Quantity = item.Quantity,
-                    ProductId = item.Id,
+                    ProductId = item.Product.Id,
                     OrderId = order.Id,
                     Price = item.Product.Price * item.Quantity
                 };

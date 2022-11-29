@@ -10,6 +10,6 @@ namespace final1.Models
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public Order Order { get; set; }
-        public Products Products { get; set; }
+        public Products Product { get; set; }
     }
 }
