@@ -21,7 +21,7 @@ namespace final1.Controllers
             _context = context;
             _cart = cart;
         }
-        public IActionResult Index()
+        public IActionResult Checkout()
         {
             return View();
         }
@@ -61,6 +61,7 @@ namespace final1.Controllers
                 {
                     Quantity = item.Quantity,
                     ProductId = item.Id,
+                    OrderId = order.Id,
                     Price = item.Product.Price * item.Quantity
                 };
             order.OrderItem.Add(orderItem);
