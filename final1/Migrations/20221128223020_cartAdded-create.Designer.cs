@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using final1.Data;
 
 namespace final1.Migrations
 {
     [DbContext(typeof(final1Context))]
-    partial class final1ContextModelSnapshot : ModelSnapshot
+    [Migration("20221128223020_cartAdded-create")]
+    partial class cartAddedcreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,52 +42,6 @@ namespace final1.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("CartItems");
-                });
-
-            modelBuilder.Entity("final1.Models.Order", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("OrderTotal")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Order");
-                });
-
-            modelBuilder.Entity("final1.Models.OrderItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("OrderItem");
                 });
 
             modelBuilder.Entity("final1.Models.Products", b =>
@@ -134,19 +90,6 @@ namespace final1.Migrations
                     b.HasOne("final1.Models.Products", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("final1.Models.OrderItem", b =>
-                {
-                    b.HasOne("final1.Models.Order", "Order")
-                        .WithMany("OrderItem")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("final1.Models.Products", "Products")
-                        .WithMany()
-                        .HasForeignKey("ProductsId");
                 });
 #pragma warning restore 612, 618
         }

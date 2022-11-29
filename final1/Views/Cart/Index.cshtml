@@ -29,12 +29,12 @@
                         @PdTotal.ToString("c")
                     </td>
                     <td>
-                        <a asp-controller="Cart" asp-action="ReduceQuantity" asp-route-id="@item.Product.Id"><i class="fa-solid fa-minus"></i></a>
+                        <a asp-controller="Cart" asp-action="ReduceQuantity" asp-route-id="@item.Product.Id">-<i class="fa-solid fa-minus"></i></a>
                         <span class="badge badge-primary">@item.Quantity</span>
-                        <a asp-controller="Cart" asp-action="IncreaseQuantity" asp-route-id="@item.Product.Id"><i class="fa-solid fa-plus"></i></a>
+                        <a asp-controller="Cart" asp-action="IncreaseQuantity" asp-route-id="@item.Product.Id">+<i class="fa-solid fa-plus"></i></a>
                     </td>
                     <td>
-                        <a asp-controller="Cart" asp-action="RemoveFromCart" asp-route-id="@item.Product.Id" class="text-danger"><i class="fa-solid fa-xmark"></i></a>
+                        <a asp-controller="Cart" asp-action="RemoveFromCart" asp-route-id="@item.Product.Id" class="text-danger">x<i class="fa-solid fa-xmark"></i></a>
                     </td>
                 </tr>
             }

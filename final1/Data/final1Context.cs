@@ -15,6 +15,8 @@ namespace final1.Data
         }
 
         public DbSet<Products> Products { get; set; }
-        public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<CartItems> CartItems { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderItem> OrderItem { get; set; }
     }
 }

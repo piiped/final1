@@ -18,7 +18,7 @@ namespace final1.Models
         }
 
         public string Id { get; set; }
-        public List<CartItem> CartItems { get; set; }
+        public List<CartItems> CartItems { get; set; }
 
         public static Cart GetCart(IServiceProvider services)
         {
@@ -32,7 +32,7 @@ namespace final1.Models
             return new Cart(context) { Id = cartId };
         }
 
-        public CartItem GetCartItem(Products Product)
+        public CartItems GetCartItems(Products Product)
         {
             return _context.CartItems.SingleOrDefault(ci =>
                 ci.Product.Id == Product.Id && ci.CartId == Id);
@@ -40,27 +40,88 @@ namespace final1.Models
 
         public void AddToCart(Products Product, int quantity)
         {
-            var cartItem = GetCartItem(Product);
+            var CartItems = GetCartItems(Product);
 
-            if (cartItem == null)
+            if (CartItems == null)
             {
-                cartItem = new CartItem
+                CartItems = new CartItems
                 {
                     Product = Product,
                     Quantity = quantity,
                     CartId = Id
                 };
 
-                _context.CartItems.Add(cartItem);
+                _context.CartItems.Add(CartItems);
             }
             else
             {
-                cartItem.Quantity += quantity;
+                CartItems.Quantity += quantity;
             }
             _context.SaveChanges();
         }
 
-        public List<CartItem> GetAllCartItems()
+
+
+        public int ReduceQuantity(Products products)
+        {
+            var CartItems = GetCartItems(products);
+            var remainingQuantity = 0;
+
+            if (CartItems != null)
+            {
+                if(CartItems.Quantity > 1) 
+                {
+                    remainingQuantity = --CartItems.Quantity;
+                }
+                else
+                {
+                    _context.CartItems.Remove(CartItems);
+                }
+            }
+            _context.SaveChanges();
+
+            return remainingQuantity;
+        }
+
+        public int IncreaseQuantity(Products products)
+        {
+            var CartItems = GetCartItems(products);
+            var remainingQuantity = 0;
+
+            if (CartItems != null)
+            {
+                if (CartItems.Quantity > 0)
+                {
+                    remainingQuantity = ++CartItems.Quantity;
+                }
+
+            }
+            _context.SaveChanges();
+
+            return remainingQuantity;
+        }
+
+        public void RemoveFromCart(Products product)
+        {
+            var cartItem = GetCartItems(product);
+
+            if (cartItem != null)
+            {
+                _context.CartItems.Remove(cartItem);
+            }
+            _context.SaveChanges();
+        }
+
+        public void ClearCart()
+        {
+            var cartItems = _context.CartItems.Where(ci => ci.CartId == Id);
+
+            _context.CartItems.RemoveRange(cartItems);
+
+            _context.SaveChanges();
+        }
+
+        public List<CartItems> GetAllCartItems()
         {
             return CartItems ??
                 (CartItems = _context.CartItems.Where(ci => ci.CartId == Id)

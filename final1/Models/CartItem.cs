@@ -1,6 +1,6 @@
 ﻿namespace final1.Models
 {
-    public class CartItem
+    public class CartItems
     {
         public int Id { get; set; }
         public Products Product { get; set; }
