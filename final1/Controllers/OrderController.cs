@@ -34,7 +34,7 @@ namespace final1.Controllers
 
             if (_cart.CartItems.Count == 0) 
             {
-                ModelState.AddModelError(key:"",errorMessage:"Cart is empty, please add a product first.");
+                ModelState.AddModelError("","Cart is empty, please add a product first.");
             }
             if (ModelState.IsValid)
             {
