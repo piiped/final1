@@ -60,7 +60,7 @@ namespace final1.Controllers
                 var orderItem = new OrderItem()
                 {
                     Quantity = item.Quantity,
-                    ProductId = item.Id,
+                    ProductId = item.Product.Id,
                     OrderId = order.Id,
                     Price = item.Product.Price * item.Quantity
                 };
