@@ -25,7 +25,6 @@ namespace final1.Controllers
 
             return View(_cart);
         }
-
         public IActionResult AddToCart(int id)
         {
             var selectedPd = GetPdById(id);
@@ -33,10 +32,44 @@ namespace final1.Controllers
             if (selectedPd != null)
             {
                 _cart.AddToCart(selectedPd, 1);
-            }
 
-            return RedirectToAction("Index","Shop");
+            }
+            return RedirectToAction("Index", "Shop");
         }
+        public IActionResult AddToCartp(int id)
+        {
+            var selectedPd = GetPdById(id);
+
+            if (selectedPd != null)
+            {
+                _cart.AddToCart(selectedPd, 1);
+             
+            }
+            return RedirectToAction("Polish", "Shop");
+        }
+        public IActionResult AddToCartf(int id)
+        {
+            var selectedPd = GetPdById(id);
+
+            if (selectedPd != null)
+            {
+                _cart.AddToCart(selectedPd, 1);
+
+            }
+            return RedirectToAction("Fakenail", "Shop");
+        }
+        public IActionResult AddToCartt(int id)
+        {
+            var selectedPd = GetPdById(id);
+
+            if (selectedPd != null)
+            {
+                _cart.AddToCart(selectedPd, 1);
+
+            }
+            return RedirectToAction("Tools", "Shop");
+        }
+
 
         public IActionResult RemoveFromCart(int id)
         {
