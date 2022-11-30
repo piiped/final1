@@ -36,6 +36,7 @@ namespace final1.Controllers
             }
             return RedirectToAction("Index", "Shop");
         }
+       
         public IActionResult AddToCartp(int id)
         {
             var selectedPd = GetPdById(id);

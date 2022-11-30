@@ -12,9 +12,9 @@ namespace final1.Models
         {
             using (var context = new final1Context(serviceProvider.GetRequiredService<DbContextOptions<final1Context>>()))
             {
-                if (context.Products.Any())    // Check if database contains any books
+                if (context.Products.Any())    // Check if database contains any products
                 {
-                    return;     // Database contains books already
+                    return;     // Database contains products already
                 }
 
                 context.Products.AddRange(
