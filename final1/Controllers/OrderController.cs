@@ -70,5 +70,10 @@ namespace final1.Controllers
             _context.Order.Add(order);
             _context.SaveChanges();
         }
+
+        public IActionResult Complete()
+        {
+            return View();
+        }
     }
 }
