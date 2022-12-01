@@ -24,8 +24,6 @@ p {
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-    align-content:center;
-    align-items:center;
     margin-top:100px;
     margin-bottom:100px;
 }
@@ -38,3 +36,6 @@ p {
         text-indent:20px;
         
     }
+.mapouter{
+    margin-bottom:40px;
+}
