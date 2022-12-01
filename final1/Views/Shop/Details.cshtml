@@ -1,54 +1,146 @@
-﻿@model final1.Models.Products
+@model final1.Models.Products
 
 @{
     ViewData["Title"] = "Details";
 }
 
+
+        <head>
+    <title>@ViewData["Title"] - La'nails</title>
+    <link rel="stylesheet" href="~/css/details.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
+
 <div class="container">
-<h1>Details</h1>
+        <div class="row section">
+        <div class="col-lg-6">
+            <div class="row">
 
-<div class="row">
-    <div class="col-5">
+                @{
+                    if (Model.Category == "polish")
+                    {
+                            <a asp-action="Polish" class="btn" style="width: auto; margin:0px;"><i class="bi bi-chevron-left"></i> Back</a>
+                    }
+                    else if (Model.Category == "fakenail")
+                    {
+                            <a asp-action="Fakenail" class="btn" style="width: auto; margin:0px;"><i class="bi bi-chevron-left"></i> Back</a>                       
+                    }
+                    else if (Model.Category == "tools")
+                    {
+                            <a asp-action="Tools" class="btn" style="width: auto; margin:0px;"><i class="bi bi-chevron-left"></i> Back</a>
+                    }
+                }
+               
 
-        <div>
-            <h4>Book</h4>
-            <hr />
-            <dl class="row">
-                <dt class="col-sm-3">
-                    @Html.DisplayNameFor(model => model.Name)
-                </dt>
-                <dd class="col-sm-9">
-                    @Html.DisplayFor(model => model.Name)
-                </dd>
-                <dt class="col-sm-3">
-                    @Html.DisplayNameFor(model => model.Price)
-                </dt>
-                <dd class="col-sm-9">
-                    @Html.DisplayFor(model => model.Price)
-                </dd>
-                <dt class="col-sm-3">
-                    @Html.DisplayNameFor(model => model.Detail)
-                </dt>
-                <dd class="col-sm-9">
-                    @Html.DisplayFor(model => model.Detail)
-                </dd>
+         </div>
+            <div class="row">
+            <div class="mySlides">
+        <img src="~/products/@Url.Content(@Model.ImageUrl1)" style="width:430px; max-height:600px" />
+    </div>
 
-                <dt class="col-sm-3">
-                    @Html.DisplayNameFor(model => model.Price)
-                </dt>
-                <dd class="col-sm-9">
-                    @Html.DisplayFor(model => model.Price)
-                </dd>
+    <div class="mySlides">
+                <img src="~/products/@Url.Content(@Model.ImageUrl2)" style="width:430px; max-height:600px" />
+    </div>
 
-            </dl>
+    <div class="mySlides">
+                <img src="~/products/@Url.Content(@Model.ImageUrl3)" style="width:430px; max-height:600px" />
+    </div>
+
+    <div class="mySlides">
+                <img src="~/products/@Url.Content(@Model.ImageUrl4)" style="width:430px; max-height:6=00px" />
+    </div>
+
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
         </div>
-        <div>
-            <a asp-action="Index" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Back</a>
-            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.Id" class="btn btn-primary store-btn float-right mr-5">Add to cart <i class="fa-solid fa-cart-plus"></i></a>
+
+        <div class="col-lg-6 sec-2">
+            <div class="secc">
+                <div class="heart-btn">
+                    <span class="heart"></span>
+                </div>
+                <h3>@Html.DisplayFor(model => model.Name)</h3>
+                <p class="prc"><strong>@Html.DisplayFor(model => model.Price)</strong></p>
+                <p class="det">@Html.DisplayFor(model => model.Detail)</p>
+                <!--
+                <p class="qtt">Quantity
+                  
+                    <input id="minus" type="button" class="minus" value="-" name="r">
+                    <input id="theInput" type="number" size="4" class="input-text qty text" name="q" value="1" min="0" step="1">
+                    <input id="plus" type="button" class="plus" value="+">
+                </p>-->
+       
+                @{
+                    if (Model.Category == "polish")
+                    {
+                            <div>
+                                <a asp-controller="Cart" asp-action="AddToCartp" asp-route-id="@Model.Id" class="btn btn-primary" ><i class="bi bi-cart2"></i> Add to cart</a>
+                            </div>
+                    }
+                    else if (Model.Category == "fakenail")
+                    {
+                            <div>
+                                <a asp-controller="Cart" asp-action="AddToCartf" asp-route-id="@Model.Id" class="btn btn-primary "><i class="bi bi-cart2"></i> Add to cart</a>
+                            </div>
+                    }
+                    else if (Model.Category == "tools")
+                    {
+                            <div>
+                                <a asp-controller="Cart" asp-action="AddToCartt" asp-route-id="@Model.Id" class="btn btn-primary"><i class="bi bi-cart2"></i> Add to cart </a>
+                            </div>
+                    }
+                }
+            </div>
         </div>
     </div>
-    <div class="col-4">
-        <img src="@Model.ImageUrl1" class="w-100" />
-    </div>
-    </div>
+
 </div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+    
+</script>
+<script>
+    var input = document.getElementById('theInput');
+    document.getElementById('plus').onclick = function () {
+        input.value = parseInt(input.value, 10) + 1
+    }
+    document.getElementById('minus').onclick = function () {
+        input.value = parseInt(input.value, 10) - 1
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $('.heart').click(function () {
+            $('.heart').toggleClass("heart-active")
+        });
+    });
+</script>
+
