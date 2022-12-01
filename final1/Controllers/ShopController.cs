@@ -115,7 +115,7 @@ namespace final1.Controllers
 
             else
             {
-                return View("Polish", _context.Products.Where(x => x.Category == "fakenail" && x.Color.Contains(n)));
+                return View("Fakenail", _context.Products.Where(x => x.Category == "fakenail" && x.Color.Contains(n)));
             }
 
         }

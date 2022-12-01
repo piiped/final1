@@ -52,12 +52,12 @@
             </span>
             </p>
             <p>@item.Quantity<span class="price"></span></p>
-        <p class="prc">@itemTotal.ToString("c")<span class="price"></span></p>
+            <p class="prc">฿@itemTotal<span class="price"></span></p>
         
     </div>
     }
     <hr>
-    <p>Total <span class="price" style="color:black"><strong class="total">@Model?.OrderTotal.ToString("c")</strong></span></p>
+    <p>Total <span class="price" style="color:black"><strong class="total">฿@Model?.OrderTotal</strong></span></p>
     <a class="btn btn-primary " asp-controller="Order" asp-action="Complete"><div>COMPLETE</div> </a>
 </div>
     
