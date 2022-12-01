@@ -20,21 +20,21 @@
                 @{
                     if (Model.Category == "polish")
                     {
-                            <a asp-action="Polish" class="btn" style="width: auto; margin:20px 0 20px 0;"><i class="bi bi-chevron-left"></i> Back</a>
+                                <a asp-action="Polish" class="btn" style="width: auto; margin:20px 0 20px 0;"><i class="bi bi-chevron-left"></i> Back</a>
                     }
                     else if (Model.Category == "fakenail")
                     {
-                            <a asp-action="Fakenail" class="btn" style="width: auto; margin:20px 0 20px 0;"><i class="bi bi-chevron-left"></i> Back</a>
+                                <a asp-action="Fakenail" class="btn" style="width: auto; margin:20px 0 20px 0;"><i class="bi bi-chevron-left"></i> Back</a>
                     }
                     else if (Model.Category == "tools")
                     {
-                                <a asp-action="Tools" class="btn" style="width: auto; margin:20px 0 20px 0;"><i class="bi bi-chevron-left"></i> Back</a>
+                                    <a asp-action="Tools" class="btn" style="width: auto; margin:20px 0 20px 0;"><i class="bi bi-chevron-left"></i> Back</a>
                     }
                 }
                
 
          </div>
-            <div class="row" style="display:flex:justify-content:center;flex-wrap:nowrap">
+            <div class="row" style="display:flex;justify-content:center;flex-wrap:nowrap">
                 <div class="col" style="padding:0px;">
                     @{
                         if (Model.Category == "fakenail")
@@ -43,7 +43,7 @@
                         }
                         else
                         {
-                                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                                    <a class="prev" onclick="plusSlides(-1)">❮</a>
                         }
                     }
                 </div>
@@ -72,7 +72,7 @@
                     }
                     else
                     {
-                            <a class="next" onclick="plusSlides(1)">❯</a>
+                                <a class="next" onclick="plusSlides(1)">❯</a>
                     }
                  }
                  </div>
@@ -98,21 +98,21 @@
                 @{
                     if (Model.Category == "polish")
                     {
-                                <div>
-                                    <a asp-controller="Cart" asp-action="AddToCartp" asp-route-id="@Model.Id" class="btn " ><i class="bi bi-cart2"></i> Add to cart</a>
-                                </div>
+                                    <div>
+                                        <a asp-controller="Cart" asp-action="AddToCartp" asp-route-id="@Model.Id" class="btn " ><i class="bi bi-cart2"></i> Add to cart</a>
+                                    </div>
                     }
                     else if (Model.Category == "fakenail")
                     {
-                                <div>
-                                    <a asp-controller="Cart" asp-action="AddToCartf" asp-route-id="@Model.Id" class="btn  "><i class="bi bi-cart2"></i> Add to cart</a>
-                                </div>
+                                    <div>
+                                        <a asp-controller="Cart" asp-action="AddToCartf" asp-route-id="@Model.Id" class="btn  "><i class="bi bi-cart2"></i> Add to cart</a>
+                                    </div>
                     }
                     else if (Model.Category == "tools")
                     {
-                                <div>
-                                    <a asp-controller="Cart" asp-action="AddToCartt" asp-route-id="@Model.Id" class="btn "><i class="bi bi-cart2"></i> Add to cart </a>
-                                </div>
+                                    <div>
+                                        <a asp-controller="Cart" asp-action="AddToCartt" asp-route-id="@Model.Id" class="btn "><i class="bi bi-cart2"></i> Add to cart </a>
+                                    </div>
                     }
                 }
             </div>
