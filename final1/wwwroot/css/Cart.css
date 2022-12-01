@@ -1,0 +1,83 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.heading {
+    text-align: center;
+    font-weight: 700;
+    font-size: 80px;
+    margin: 70px 0;
+    color: #8A736C;
+}
+.td {
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+    color: #8A736C;
+    column-gap: 5px;
+}
+.btn {
+    margin-bottom: 40px;
+    border: none;
+    width: 140px;
+    padding: 12px;
+    font-size: 17px;
+}
+.btn-green{
+    background-color: #A95759;
+    color: #F7F2E9;
+}
+    .btn-green:hover, 
+    .btn-green:active {
+        background-color: #F6F2E9;
+        color: #A95759;
+    }
+.btn-red {
+    background-color: #8A736C;
+    color: #F7F2E9;
+}
+    .btn-red:hover,
+    .btn-red:active {
+        background-color: #F7F2E9;
+        color: #8A736C;
+    }
+th {
+    color: #8A736C;
+    width:100px;
+}
+a {
+    color: #8A736C;
+    font-size: 16px;
+}
+.badge {
+    color: #8A736C;
+    background:none;
+    font-size:16px;
+    margin:0;
+    padding:0;
+}
+.bi-bag-x{
+    font-size:20px;
+}
+td {
+    color: #8A736C;
+}
+h3 {
+    color: #8A736C;
+}
+.btn-box {
+    display: flex;
+    justify-content: end;
+    justify-items: end;
+    column-gap: 20px;
+}
