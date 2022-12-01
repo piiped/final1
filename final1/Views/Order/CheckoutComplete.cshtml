@@ -50,14 +50,15 @@
         <p>
             <a class="a-cleanup" asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">@item.Product.Name</a><span class="price">
             </span>
-        </p>
-        <p>@itemTotal.ToString("c")<span class="price"></span></p>
-        <p>@item.Quantity<span class="price"></span></p>
+            </p>
+            <p>@item.Quantity<span class="price"></span></p>
+        <p class="prc">@itemTotal.ToString("c")<span class="price"></span></p>
+        
     </div>
     }
     <hr>
-    <p>Total <span class="price" style="color:black"><strong>@Model?.OrderTotal.ToString("c")</strong></span></p>
-    <a class="btn btn-primary " asp-controller="Order" asp-action="Complete"><div>Complete</div> </a>
+    <p>Total <span class="price" style="color:black"><strong class="total">@Model?.OrderTotal.ToString("c")</strong></span></p>
+    <a class="btn btn-primary " asp-controller="Order" asp-action="Complete"><div>COMPLETE</div> </a>
 </div>
     
 
