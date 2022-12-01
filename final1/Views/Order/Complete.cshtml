@@ -1,16 +1,21 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    ViewData["Title"] = "Complete";
+}
 
-<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Complete</title>
+    <title>@ViewData["Title"] - Order Complete</title>
+    <link rel="stylesheet" href="~/css/OrderComplete.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
-<body>
-    <img class="logo-payment" src="~/logo_red.png" width="167px" />
-
-    <button>
-        <a class="a-cleanup" asp-controller="Home" asp-action="Index">BACK TO HOME</div> </a>
-    </button>
-     
-</body>
-</html>
+<div class="container">
+    <div class="box">
+        <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/logo_red.png" class="logo-payment" />
+                </a>
+        <i class="check-icon bi bi-cart-check-fill"></i>
+        <p>YOUR ORDER IS COMPLETE!</p>
+        
+    </div>
+</div>
