@@ -90,9 +90,21 @@ a.navbar-brand {
     text-align: left;
 }
 
+
     .dropdown-item:hover {
-        color: black;
+        color: #a95759 !important;
     }
+    .dropdown-item.active, .dropdown-item:active {
+        color: #a95759 !important;
+        text-decoration: none !important;
+        background-color: #f7f2e9 !important;
+    }
+    .dropdown-item:focus, .dropdown-item:hover {
+        color: #a95759 !important;
+        text-decoration: none !important;
+        background-color: #f8f9fa !important;
+    }
+
 /* Provide sufficient contrast against white background */
 .btn-primary {
     color: #fff;

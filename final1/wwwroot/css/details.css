@@ -47,15 +47,12 @@ img {
 /* Position the "next button" to the right */
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
 }
 
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover,
-    .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
 
+    .prev:hover, .next:hover {
+        background-color: rgb(169 87 89 / 50%)!important;
+    }
 
 .section{
     display:flex;
@@ -97,17 +94,30 @@ p .qtt{
     border:none;
 }
 .btn {
-   background: #A95759;
-   border:none;
-   color:white;
-   margin-top:40px;
-   width:325px;
-   border-radius:0px;
+    background: #A95759;
+    border: none;
+    color: white;
+    margin-top: 40px;
+    width: 325px;
+    border-radius: 0px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
 }
     .btn:hover {
         background: #F7F2E9;
         color: #A95759;
-
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+    }
+    .btn.focus, .btn:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgb(247 242 233 / 50%) !important;
+    }
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #b05759 !important;
+    background-color: #f7f2e9 !important;
+    border-color: #f7f2e9 !important;
+}
+    .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgb(247 242 233 / 50%) !important;
     }
 
 heart-btn {
